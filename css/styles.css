@@ -1,0 +1,288 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Navigation */
+#main-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  transition: background 0.3s;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo h2 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #000;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #007bff;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #333;
+  margin: 3px 0;
+  transition: 0.3s;
+}
+
+/* Sections */
+.section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 100px 0 50px;
+  position: relative;
+}
+
+.full-screen {
+  height: 100vh;
+  padding-top: 0;
+}
+
+.dark {
+  background: #111;
+  color: #fff;
+}
+
+/* Hero */
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.hero-video iframe {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-content {
+  text-align: center;
+  color: #fff;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-content h1 {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s 0.5s forwards;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s 0.8s forwards;
+}
+
+.cta-button a {
+  display: inline-block;
+  padding: 1rem 3rem;
+  background: #007bff;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: transform 0.3s;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s 1.1s forwards;
+}
+
+.cta-button a:hover {
+  transform: scale(1.05);
+}
+
+/* Stats */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin: 4rem 0;
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #007bff;
+}
+
+/* Section Video */
+.section-video {
+  width: 100%;
+  height: 50vh;
+  object-fit: cover;
+  border-radius: 20px;
+  margin: 2rem 0;
+}
+
+/* Grids */
+.stats-grid, .luxury-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.carousel-placeholder {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 2rem 0;
+}
+
+/* CTA */
+.cta-section {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: #fff;
+  text-align: center;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.btn-primary, .btn-secondary {
+  padding: 1rem 2rem;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: transform 0.3s;
+}
+
+.btn-primary {
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(10px);
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid rgba(255,255,255,0.5);
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+  transform: translateY(-5px);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-in {
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+}
+
+/* Scroll reveal */
+.section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-out;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Performance */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+iframe {
+  aspect-ratio: 16/9;
+}

@@ -3,7 +3,7 @@
 ## Overview
 Fully interactive browser-based sales tool for Mall of America, world's largest US shopping destination. Video-first, luxury UI, non-linear navigation. Targets tenants, sponsors, event partners.
 
-**Live Demo:** [Coming soon - GitHub Pages URL]
+**Live Demo:** https://sriharikunchala18.github.io/moa-sales-deck
 
 **Tech Stack:**
 - HTML5, CSS3 (Flex/Grid, animations)
